@@ -235,5 +235,6 @@ def checkout_html_route():
     username = session.get('nombre_cliente', 'Invitado')
     return render_template('checkout.html', logged_in=logged_in, username=username)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
